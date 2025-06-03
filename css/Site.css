@@ -1,0 +1,1525 @@
+:root {
+    --wp--preset--aspect-ratio--square: 1;
+    --wp--preset--aspect-ratio--4-3: 4/3;
+    --wp--preset--aspect-ratio--3-4: 3/4;
+    --wp--preset--aspect-ratio--3-2: 3/2;
+    --wp--preset--aspect-ratio--2-3: 2/3;
+    --wp--preset--aspect-ratio--16-9: 16/9;
+    --wp--preset--aspect-ratio--9-16: 9/16;
+    --wp--preset--color--black: #000000;
+    --wp--preset--color--cyan-bluish-gray: #abb8c3;
+    --wp--preset--color--white: #ffffff;
+    --wp--preset--color--pale-pink: #f78da7;
+    --wp--preset--color--vivid-red: #cf2e2e;
+    --wp--preset--color--luminous-vivid-orange: #ff6900;
+    --wp--preset--color--luminous-vivid-amber: #fcb900;
+    --wp--preset--color--light-green-cyan: #7bdcb5;
+    --wp--preset--color--vivid-green-cyan: #00d084;
+    --wp--preset--color--pale-cyan-blue: #8ed1fc;
+    --wp--preset--color--vivid-cyan-blue: #0693e3;
+    --wp--preset--color--vivid-purple: #9b51e0;
+    --wp--preset--color--bg-color: #ffffff;
+    --wp--preset--color--bd-color: #DED4E1;
+    --wp--preset--color--text-dark: #322038;
+    --wp--preset--color--text-light: #B5AFB8;
+    --wp--preset--color--text-link: #b99559;
+    --wp--preset--color--text-hover: #651d20;
+    --wp--preset--color--text-link-2: #b99559;
+    --wp--preset--color--text-hover-2: #b99559;
+    --wp--preset--color--text-link-3: #9FA73E;
+    --wp--preset--color--text-hover-3: #7B831E;
+    --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+    --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+    --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+    --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+    --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+    --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+    --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+    --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+    --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+    --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+    --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+    --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+    --wp--preset--font-size--small: 13px;
+    --wp--preset--font-size--medium: 20px;
+    --wp--preset--font-size--large: 36px;
+    --wp--preset--font-size--x-large: 42px;
+    --wp--preset--font-family--inter: "Inter", sans-serif;
+    --wp--preset--font-family--cardo: Cardo;
+    --wp--preset--spacing--20: 0.44rem;
+    --wp--preset--spacing--30: 0.67rem;
+    --wp--preset--spacing--40: 1rem;
+    --wp--preset--spacing--50: 1.5rem;
+    --wp--preset--spacing--60: 2.25rem;
+    --wp--preset--spacing--70: 3.38rem;
+    --wp--preset--spacing--80: 5.06rem;
+    --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+    --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+    --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+    --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+}
+
+:where(.is-layout-flex) {
+    gap: 0.5em;
+}
+
+:where(.is-layout-grid) {
+    gap: 0.5em;
+}
+
+body .is-layout-flex {
+    display: flex;
+}
+
+.is-layout-flex {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.is-layout-flex> :is(*, div) {
+    margin: 0;
+}
+
+body .is-layout-grid {
+    display: grid;
+}
+
+.is-layout-grid> :is(*, div) {
+    margin: 0;
+}
+
+:where(.wp-block-columns.is-layout-flex) {
+    gap: 2em;
+}
+
+:where(.wp-block-columns.is-layout-grid) {
+    gap: 2em;
+}
+
+:where(.wp-block-post-template.is-layout-flex) {
+    gap: 1.25em;
+}
+
+:where(.wp-block-post-template.is-layout-grid) {
+    gap: 1.25em;
+}
+
+.has-black-color {
+    color: var(--wp--preset--color--black) !important;
+}
+
+.has-cyan-bluish-gray-color {
+    color: var(--wp--preset--color--cyan-bluish-gray) !important;
+}
+
+.has-white-color {
+    color: var(--wp--preset--color--white) !important;
+}
+
+.has-pale-pink-color {
+    color: var(--wp--preset--color--pale-pink) !important;
+}
+
+.has-vivid-red-color {
+    color: var(--wp--preset--color--vivid-red) !important;
+}
+
+.has-luminous-vivid-orange-color {
+    color: var(--wp--preset--color--luminous-vivid-orange) !important;
+}
+
+.has-luminous-vivid-amber-color {
+    color: var(--wp--preset--color--luminous-vivid-amber) !important;
+}
+
+.has-light-green-cyan-color {
+    color: var(--wp--preset--color--light-green-cyan) !important;
+}
+
+.has-vivid-green-cyan-color {
+    color: var(--wp--preset--color--vivid-green-cyan) !important;
+}
+
+.has-pale-cyan-blue-color {
+    color: var(--wp--preset--color--pale-cyan-blue) !important;
+}
+
+.has-vivid-cyan-blue-color {
+    color: var(--wp--preset--color--vivid-cyan-blue) !important;
+}
+
+.has-vivid-purple-color {
+    color: var(--wp--preset--color--vivid-purple) !important;
+}
+
+.has-black-background-color {
+    background-color: var(--wp--preset--color--black) !important;
+}
+
+.has-cyan-bluish-gray-background-color {
+    background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+}
+
+.has-white-background-color {
+    background-color: var(--wp--preset--color--white) !important;
+}
+
+.has-pale-pink-background-color {
+    background-color: var(--wp--preset--color--pale-pink) !important;
+}
+
+.has-vivid-red-background-color {
+    background-color: var(--wp--preset--color--vivid-red) !important;
+}
+
+.has-luminous-vivid-orange-background-color {
+    background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+}
+
+.has-luminous-vivid-amber-background-color {
+    background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+}
+
+.has-light-green-cyan-background-color {
+    background-color: var(--wp--preset--color--light-green-cyan) !important;
+}
+
+.has-vivid-green-cyan-background-color {
+    background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+}
+
+.has-pale-cyan-blue-background-color {
+    background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+}
+
+.has-vivid-cyan-blue-background-color {
+    background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+}
+
+.has-vivid-purple-background-color {
+    background-color: var(--wp--preset--color--vivid-purple) !important;
+}
+
+.has-black-border-color {
+    border-color: var(--wp--preset--color--black) !important;
+}
+
+.has-cyan-bluish-gray-border-color {
+    border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+}
+
+.has-white-border-color {
+    border-color: var(--wp--preset--color--white) !important;
+}
+
+.has-pale-pink-border-color {
+    border-color: var(--wp--preset--color--pale-pink) !important;
+}
+
+.has-vivid-red-border-color {
+    border-color: var(--wp--preset--color--vivid-red) !important;
+}
+
+.has-luminous-vivid-orange-border-color {
+    border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+}
+
+.has-luminous-vivid-amber-border-color {
+    border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+}
+
+.has-light-green-cyan-border-color {
+    border-color: var(--wp--preset--color--light-green-cyan) !important;
+}
+
+.has-vivid-green-cyan-border-color {
+    border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+}
+
+.has-pale-cyan-blue-border-color {
+    border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+}
+
+.has-vivid-cyan-blue-border-color {
+    border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+}
+
+.has-vivid-purple-border-color {
+    border-color: var(--wp--preset--color--vivid-purple) !important;
+}
+
+.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+    background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+}
+
+.has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+    background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+}
+
+.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+    background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+}
+
+.has-luminous-vivid-orange-to-vivid-red-gradient-background {
+    background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+}
+
+.has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+    background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+}
+
+.has-cool-to-warm-spectrum-gradient-background {
+    background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+}
+
+.has-blush-light-purple-gradient-background {
+    background: var(--wp--preset--gradient--blush-light-purple) !important;
+}
+
+.has-blush-bordeaux-gradient-background {
+    background: var(--wp--preset--gradient--blush-bordeaux) !important;
+}
+
+.has-luminous-dusk-gradient-background {
+    background: var(--wp--preset--gradient--luminous-dusk) !important;
+}
+
+.has-pale-ocean-gradient-background {
+    background: var(--wp--preset--gradient--pale-ocean) !important;
+}
+
+.has-electric-grass-gradient-background {
+    background: var(--wp--preset--gradient--electric-grass) !important;
+}
+
+.has-midnight-gradient-background {
+    background: var(--wp--preset--gradient--midnight) !important;
+}
+
+.has-small-font-size {
+    font-size: var(--wp--preset--font-size--small) !important;
+}
+
+.has-medium-font-size {
+    font-size: var(--wp--preset--font-size--medium) !important;
+}
+
+.has-large-font-size {
+    font-size: var(--wp--preset--font-size--large) !important;
+}
+
+.has-x-large-font-size {
+    font-size: var(--wp--preset--font-size--x-large) !important;
+}
+
+:where(.wp-block-post-template.is-layout-flex) {
+    gap: 1.25em;
+}
+
+:where(.wp-block-post-template.is-layout-grid) {
+    gap: 1.25em;
+}
+
+:where(.wp-block-columns.is-layout-flex) {
+    gap: 2em;
+}
+
+:where(.wp-block-columns.is-layout-grid) {
+    gap: 2em;
+}
+
+:root :where(.wp-block-pullquote) {
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+.media-item{
+    color: #000000;
+}
+.media-item:hover{
+    color: #651D20 ;
+}
+
+.color-text{
+    color: #651D20;
+}
+li a{
+    font-family: "Sofia Sans", Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+.custom-section {
+   
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    padding: 10px 0px 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+/* Container */
+.custom-container {
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.custom-logo {
+    height: auto;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.custom-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-logo-image {
+    max-height: 150px !important;
+    width: auto !important;
+    max-width: 180px;
+}
+
+/* Navigation Menu */
+.custom-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-nav {
+    text-align: center;
+}
+
+.custom-nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.custom-nav-menu > li {
+    position: relative;
+}
+
+.custom-nav-menu > li > a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.custom-nav-menu > li > a:hover {
+    color: #c0392b;
+}
+
+/* Dropdown Styling */
+.custom-sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;    
+    background: #651D20;
+    z-index: 1;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    width: 200px;
+}
+
+.custom-sub-menu li {
+    padding: 5px 0;
+}
+
+.custom-sub-menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    padding: 8px 12px;
+    transition: background 0.3s ease;
+}
+
+.custom-sub-menu li a:hover {
+    background: #4f1f1d;
+}
+
+/* Show dropdown on hover */
+.custom-nav-menu li:hover .custom-sub-menu {
+    display: block;
+}
+
+/* Sub Section */
+.custom-sub-section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.custom-heading {
+    font-size: 18px;
+    color: #000;
+}
+
+/* Audio Player */
+.custom-audio {
+    margin-top: 10px;
+
+}
+#playButton, #pauseButton {
+    padding: 4px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 0.5px solid #939393;
+    background-color: transparent;
+    color: #651D20;
+    border-radius: 50px;
+}
+
+
+#customAudioPlayer {
+    font-family: "Sofia Sans", Sans-serif;
+    font-size: 18px;
+    width: 100%;
+    max-width: 300px;
+}
+.donate-btn{
+    font-family: "Sofia Sans", Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    fill: #FFFFFF;
+    color: #FFFFFF;
+    background-color: #651D20;
+    border-radius: 0px 0px 0px 0px;
+    padding: 15px 15px 15px 15px;
+}
+.page-header{
+    color: #FFFFFF;
+    background-color: #651D20;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .custom-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .custom-nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .custom-nav-menu li {
+        width: 100%;
+    }
+
+    .custom-nav-menu li a {
+        display: block;
+    }
+
+    .custom-sub-menu {
+        position: relative;
+        width: 100%;
+        box-shadow: none;
+        display: block;
+        background: transparent;
+    }
+}
+/* Footer Styling */
+.custom-footer {
+    color: #FFFFFF;
+    background-color: #651D20;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.footer-text {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.social-icons a {
+    color: #bbb;
+    font-size: 18px;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+/* Copyright Section */
+.footer-bottom {
+    color: #FFFFFF;
+    background-color: #651D20;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-bottom span {
+    color: #fff;
+}
+.About-content {
+    
+}
+p{
+    font-size: 20px !important;
+}
+.about-img{
+    background-color: #FFFFFF;
+    background-image: url(/images/uvari.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.valunteer-img{
+    background-color: #FFFFFF;
+    background-image: url(/images/uvari2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+/* / Gallery Styles / */
+.gallery_container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.gallery_item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+.gallery_item:hover img {
+    transform: scale(1.05);
+}
+.mfp-container {
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: auto;
+}
+
+
+.event-container{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.event-card{
+    border-color: #651D20 !important;
+    box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, .5);
+}
+
+.event-name{
+    text-decoration: none;
+}
+.evt-img{
+    height: auto;
+    max-height: 400px;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.contact-img{
+    height: auto;
+    max-height: 400px;
+    max-width: 100%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+/* Testimonials Container */
+.testimonials-container {
+    background-color: #651D20;
+    padding: 40px 20px;
+}
+
+.head-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Grid Layout */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Quote Icon */
+.quote-icon {
+    font-size: 24px;
+    color: #651D20;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Testimonial Content */
+.testimonial-content p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Author Section */
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.author-details h4 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.author-details span {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    }
+}
+
+ /* Newsletter Section */
+ .newsletter-section {
+    position: relative;
+    background: url('/images/Uvari_temple.jpg') no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Dark Overlay */
+.newsletter-overlay {
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+}
+
+/* Title */
+.newsletter-title {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.newsletter-description {
+    color: #ddd;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Form */
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Input Field */
+.newsletter-form input {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Subscribe Button */
+.newsletter-form button {
+    background-color: #7a1313;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.newsletter-form button:hover {
+    background-color: #a41b1b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .newsletter-overlay {
+        padding: 20px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+    }
+}
+
+.visit-hdr {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.contact-btn {
+    background-color: #651D20 !important;
+    color: white !important;
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 1000;
+    border: none;
+    cursor: pointer;
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.overlay-image {
+    position: absolute;
+    bottom: -25px;
+    right: -25px;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    padding: 5px;
+    background-color: #ffffffd6;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-background {
+    width: 100%;
+    height: auto;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.overlay-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: rgba(2, 24, 55, 0.85);
+    position: relative;
+    z-index: 999;
+    padding: 40px 20px;
+}
+
+@media (max-width: 768px) {
+    .overlay-content {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+    .overlay-image {
+        width: 30%;
+        max-width: 200px;
+        bottom: 5px;
+        right: 5px;
+    }
+    .image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .visit-hdr {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay-image {
+        width: 25%;
+        bottom: 0;
+        right: 0;
+    }
+    .visit-hdr {
+        font-size: 1.5rem;
+    }
+    .contact-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+        display: block;
+        width: auto;
+        margin: 10px auto;
+    }
+}
+
+.contact-container {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+.contact-left {
+    flex: 1;
+    background: url('/images/uvari1.jpg') no-repeat center center/cover;
+    position: relative;
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contact-left::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+.contact-left h2 {
+    position: relative;
+    font-weight: bold;
+    z-index: 1;
+}
+.contact-info {
+    position: relative;
+    z-index: 1;
+    background: #ffffffb0;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+}
+.contact-right {
+    flex: 1;
+    background: #5f5f5f57;
+    padding: 40px;
+}
+.contact-right h2 {
+    color: #ffffff;
+    font-weight: bold;
+}
+.form-control {
+    margin-bottom: 15px;
+}
+.btn-primary {
+    width: 100%;
+    background: #651D20 !important;
+    border: none !important;
+}
+.form-control:focus {
+    border-color: #651D20 !important;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+/* volunteer form */
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .form-input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 10px 5px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-bottom: 2px solid #651D20;
+  }
+  
+  .form-group label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #aaa;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .form-input:focus + label,
+  .form-input.has-value + label {
+    top: 0;
+    font-size: 12px;
+    color: #651D20;
+  }
+  
+  textarea.form-input {
+    height: 80px;
+    resize: none;
+  }
+  
+  .select-wrapper {
+    position: relative;
+  }
+  
+  .select-wrapper select {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    appearance: none;
+  }
+  
+  .select-wrapper label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #aaa;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .select-wrapper select:focus + label,
+  .select-wrapper select.has-value + label {
+    top: 0;
+    font-size: 12px;
+    color: #651D20;
+  }
+  
+
+  /* donate page css */
+  .section_padding {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.section_title h3 {
+    font-size: 40px;
+    font-weight: 400;
+    color: #191d34;
+    z-index: 1;
+    font-family: "Yeseva One", cursive;
+    line-height: 1.3;
+  }
+  
+  /* line 9, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+  .section_title h3 span {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+  }
+  
+  /* line 13, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+  .section_title h3 span::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #651d20;
+    height: 10px;
+    width: 100%;
+    content: '';
+    opacity: .7;
+    bottom: 7px;
+    z-index: -1;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 2, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+    .section_title h3 {
+      font-size: 25px;
+      line-height: 36px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* line 2, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+    .section_title h3 {
+      font-size: 36px;
+      line-height: 42px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    /* line 34, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+    .section_title h3 br {
+      display: none;
+    }
+  }
+  
+  /* line 40, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+  .section_title p {
+    font-size: 16px;
+    color: #6b6a6a;
+    line-height: 30px;
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 45, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+    .section_title p br {
+      display: none;
+    }
+  }
+
+  .reson_area .single_reson {
+    position: relative;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 2, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+    .reson_area .single_reson {
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* line 2, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+    .reson_area .single_reson {
+      margin-bottom: 40px;
+    }
+  }
+  
+  /* line 10, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .thum {
+    margin-right: 84px;
+    padding-bottom: 84px;
+  }
+  
+  /* line 13, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .thum .thum_1 {
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    overflow: hidden;
+    border: 0.5px solid #651d20;
+    box-shadow: 2px 4px 10px #651d20;
+  }
+  
+  /* line 16, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .thum .thum_1 img {
+    width: 100%;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  /* line 25, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content {
+    background: #fff;
+    color: #651D20;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    padding: 47px 40px 33px 40px;
+    left: 46px;
+  }
+  
+  /* line 34, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content h4 {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  /* line 38, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content p {
+    margin-top: 21px;
+    margin-bottom: 30px;
+  }
+  
+  /* line 42, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content .read_more {
+    font-size: 16px;
+    color: #BCBDBF;
+    text-transform: capitalize;
+    position: relative;
+    display: inline-block;
+    padding-left: 68px;
+  }
+  
+  /* line 49, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content .read_more::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 36px;
+    height: 2px;
+    background: #707070;
+    content: '';
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  /* line 60, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content .read_more:hover {
+    color: #651d20;
+  }
+  
+  /* line 62, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content .read_more:hover::before {
+    background: #651d20;
+  }
+  
+  /* line 70, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson:hover .thum img {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  .latest_activites_area {
+    background: #651d200f;
+    position: relative;
+    max-height: 700px;
+    border-radius: 15px;
+  }
+  
+  /* line 10, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+  .latest_activites_area .video_activite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    bottom: 0;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 10, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+    .latest_activites_area .video_activite {
+      display: none !important;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* line 10, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+    .latest_activites_area .video_activite {
+      display: none !important;
+    }
+  }
+ 
+  /* line 34, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+  .latest_activites_area .video_activite::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .3;
+    content: '';
+  }
+  
+  /* line 45, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+  .latest_activites_area .activites_info {
+    padding-bottom: 226px;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 45, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+    .latest_activites_area .activites_info {
+      padding: 50px 15px;
+    }
+  }
+  
+  /* line 58, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+  .latest_activites_area .activites_info p.para_1 {
+    margin-bottom: 22px;
+    margin-top: 20px;
+  }
+  
+  /* line 62, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+  .latest_activites_area .activites_info p.para_2 {
+    margin-bottom: 30px;
+  }
+
+  .boxed-btn4 {
+    color: #fff;
+    display: inline-block;
+    padding: 13px 44px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    background: #651d20;
+    font-family: "Open Sans", sans-serif;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+  
+  /* line 67, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_btn.scss */
+  .boxed-btn4:hover {
+    background: #fff;
+    color: #651d20;
+    border: 1px solid #651d20;
+  }
+  
+  /* line 72, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_btn.scss */
+  .boxed-btn4:focus {
+    outline: none;
+  }
+  
+  /* line 75, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_btn.scss */
+  .boxed-btn4.large-width {
+    width: 220px;
+  }
+  .video_bg_1 {
+    background-image: url(../images/sivalingamUvari.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 15px 0 0 15px;
+  }
+  
+  .make_donation_area .donation_form .input_field .input-group {
+    width: 100%;
+    border: 1px solid #651d20;
+    border-radius: 7px;
+    padding: 5px 10px;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  }
+  
+  /* line 64, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .input_field .input-group .input-group-text {
+    font-size: 16px;
+    background: transparent;
+    border: 0;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+  }
+  
+  /* line 71, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .input_field .input-group .form-control {
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    border-bottom: 0;
+    border-top: 0;
+    border-radius: 0;
+    border-right: 0;
+    padding: 0 0 0 25px;
+    height: 50px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color: #000;
+  }
+  
+  /* line 82, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .input_field .input-group .form-control::placeholder {
+    font-size: 16px;
+    color: #7A7B7C;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+  }
+  
+  /* line 88, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .input_field .input-group .form-control:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /* line 96, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .single_amount .fixed_donat {
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    padding: 18px 27px;
+    border-radius: 7px;
+    border: 1px solid #651d20;
+    display: block;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 96, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+    .make_donation_area .donation_form .single_amount .fixed_donat {
+      display: block !important;
+      margin-top: 15px;
+    }
+  }
+  
+  /* line 108, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .single_amount .fixed_donat .select_prise h4 {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    color: #7A7B7C;
+    margin-bottom: 0;
+  }
+  
+  /* line 116, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .single_amount .fixed_donat .single_doonate label {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #7A7B7C;
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 115, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+    .make_donation_area .donation_form .single_amount .fixed_donat .single_doonate {
+      width: 33.33%;
+      float: left;
+      margin-top: 15px;
+    }
+  }
+  
+  /* line 133, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donate_now_btn {
+    margin-top: 50px;
+  }
+
+  /* service css */
+
+  .service-card{
+    min-height: 150px;
+  }
+
+  .service-footer {
+    background-color: transparent !important;
+    border: none !important;
+  }
+  
