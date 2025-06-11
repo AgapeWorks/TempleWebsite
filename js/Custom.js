@@ -43,3 +43,4 @@ $(function () {
     $(window).resize(adjustCaption);
   });
   
+ 

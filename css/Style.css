@@ -1,0 +1,1191 @@
+/* Carousel Indicators */
+.carousel-indicators li {
+    display: inline-block;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: #666;
+    box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.carousel-indicators .active {
+    background-color: var(--secondary-color);
+}
+
+/* Carousel Fade Effect */
+.carousel-fade .carousel-inner .carousel-item {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+
+/* Carousel Caption at Bottom */
+/* Center Carousel Caption */
+.carousel-caption {
+    font-family: "Open Sans", sans-serif;
+    font-size: 2.5em;
+    font-weight: 300;
+    position: absolute;
+    top: 50% !important;
+    /* Center vertically */
+    left: 50% !important;
+    /* Center horizontally */
+    transform: translate(-50%, -50%) !important;
+    /* Adjust from center */
+    text-align: center;
+    color: var(--secondary-color);
+    text-shadow: 2px 2px #651D20;
+    width: 50%;
+    animation-delay: 1.5s;
+    animation-duration: 1.5s;
+}
+
+.carousel-caption span{
+  color: #3cffb0;
+}
+
+.carousel-caption .sub-txt {
+    font-size: 14px !important;
+    margin-top: 10px;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 3px #651D20;
+}
+
+/* Responsive Caption for Smaller Devices */
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 1.2em;
+    }
+
+    .carousel-caption .sub-txt {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Image */
+.carousel-image {
+    object-fit: cover;
+    width: 100%;
+    height: 85vh !important;
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 992px) {
+    .carousel-image {
+        height: 500px;
+    }
+}
+
+/* Small Devices (Phones) */
+@media (max-width: 768px) {
+    .carousel-image {
+        height: 350px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 576px) {
+    .carousel-image {
+        height: 250px;
+    }
+
+    .carousel-caption .sub-txt {
+        font-size: 14px;
+    }
+}
+.carousel-item:nth-child(odd) .carousel-image {
+    animation: zoomIn 8s ease-in-out infinite;
+}
+
+.carousel-item:nth-child(even) .carousel-image {
+    animation: zoomOut 8s ease-in-out infinite;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    position: relative;
+    background: url('/images/kovilfront.jpg') no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+/* Fallback for mobile browsers */
+@media (max-width: 1024px) {
+    .newsletter-section {
+        background-attachment: scroll;
+        background-position: center;
+    }
+}
+
+/* Dark Overlay */
+.newsletter-overlay {
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+}
+
+/* Title */
+.newsletter-title {
+    color: var(--secondary-color);
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.newsletter-description {
+    color: #ddd;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Form */
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Input Field */
+.newsletter-form input {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Subscribe Button */
+.newsletter-form button {
+    background-color: #7a1313;
+    color: var(--secondary-color);
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.newsletter-form button:hover {
+    background-color: #a41b1b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .newsletter-overlay {
+        padding: 20px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+    }
+}
+
+/* General Section Styling */
+
+/* Heading */
+.temple-heading {
+    font-size: 35px;
+    font-family: "Times New Roman", Sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Subheading */
+.temple-subheading {
+    font-size: 25px;
+    font-family: "Times New Roman", Sans-serif;
+    color: #a41b1b;
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 5px 20px;
+}
+
+/* Description */
+.temple-description {
+    font-size: 16px;
+    color: var(--primary-color);
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+/* Image Styling */
+.temple-img {
+    width: 100%;
+    height: 250px !important;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.temple-img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .temple-heading {
+        font-size: 22px;
+    }
+    .temple-subheading {
+        font-size: 16px;
+    }
+    .temple-description {
+        font-size: 14px;
+    }
+}
+
+.event-card{
+    min-height: 375px;
+    background-color: transparent;
+    background-image: linear-gradient(203deg, #651D20 36%, #651D20 100%);
+}
+.card-txt{
+    color: var(--secondary-color);
+}
+.event-img{
+    width: 8vw;
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+}
+
+.main-image {
+    width: 100%;
+    object-fit: cover;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.intro-image{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.overlay-image {
+    position: absolute;
+    bottom: -25px;
+    right: -25px;
+    width: 50%;
+    height: 50%;
+    padding: 5px;
+    object-fit: cover;
+    background-color: #ffffffd6;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Testimonials Container */
+.testimonials-container {
+    background-color: #651D20;
+    padding: 40px 20px;
+}
+
+.head-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Grid Layout */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Quote Icon */
+.quote-icon {
+    font-size: 24px;
+    color: #651D20;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Testimonial Content */
+.testimonial-content p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Author Section */
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.author-details h4 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.author-details span {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    }
+}
+
+/* / Gallery Styles / */
+.gallery_container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.gallery_item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+.gallery_item:hover img {
+    transform: scale(1.05);
+}
+.mfp-container {
+    max-width: 100vw;
+    max-height: 100vh;
+    margin: auto;
+}
+
+.media-item{
+    color: #000000;
+}
+.media-item:hover{
+    color: #651D20 ;
+}
+
+.overlay-background {
+    width: 100%;
+    height: auto;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.overlay-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: rgba(2, 24, 55, 0.85);
+    position: relative;
+    z-index: 999;
+    padding: 40px 20px;
+}
+
+@media (max-width: 768px) {
+    .overlay-content {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+    .overlay-image {
+        width: 30%;
+        max-width: 200px;
+        bottom: 5px;
+        right: 5px;
+    }
+    .image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .visit-hdr {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay-image {
+        width: 25%;
+        bottom: 0;
+        right: 0;
+    }
+    .visit-hdr {
+        font-size: 1.5rem;
+    }
+    .contact-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+        display: block;
+        width: auto;
+        margin: 10px auto;
+    }
+}
+
+.contact-container {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+.contact-left {
+    flex: 1;
+    background: url('/images/sivan.jpg') no-repeat center center/cover;
+    position: relative;
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contact-left::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+.contact-left h2 {
+    position: relative;
+    font-weight: bold;
+    z-index: 1;
+}
+.contact-info {
+    position: relative;
+    z-index: 1;
+    background: #ffffffb0;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+}
+.contact-right {
+    flex: 1;
+    background: #5f5f5f57;
+    padding: 40px;
+}
+.contact-right h2 {
+    color: #ffffff;
+    font-weight: bold;
+}
+.form-control {
+    margin-bottom: 15px;
+}
+.btn-primary {
+    width: 100%;
+    background: #651D20 !important;
+    border: none !important;
+}
+.form-control:focus {
+    border-color: #651D20 !important;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+/* volunteer form */
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .form-input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: transparent;
+    font-size: 16px;
+    padding: 10px 5px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-bottom: 2px solid #651D20;
+  }
+  
+  .form-group label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #aaa;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .form-input:focus + label,
+  .form-input.has-value + label {
+    top: 0;
+    font-size: 12px;
+    color: #651D20;
+  }
+  
+  textarea.form-input {
+    height: 80px;
+    resize: none;
+  }
+  
+  .select-wrapper {
+    position: relative;
+  }
+  
+  .select-wrapper select {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    appearance: none;
+  }
+  
+  .select-wrapper label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #aaa;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .select-wrapper select:focus + label,
+  .select-wrapper select.has-value + label {
+    top: 0;
+    font-size: 12px;
+    color: #651D20;
+  }
+  
+
+  /* donate page css */
+  .section_padding {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.section_title h3 {
+    font-size: 40px;
+    font-weight: 400;
+    color: #191d34;
+    z-index: 1;
+    font-family: "Yeseva One", cursive;
+    line-height: 1.3;
+  }
+  
+  /* line 9, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+  .section_title h3 span {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+  }
+  
+  /* line 13, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+  .section_title h3 span::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #651d20;
+    height: 10px;
+    width: 100%;
+    content: '';
+    opacity: .7;
+    bottom: 7px;
+    z-index: -1;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 2, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+    .section_title h3 {
+      font-size: 25px;
+      line-height: 36px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* line 2, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+    .section_title h3 {
+      font-size: 36px;
+      line-height: 42px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    /* line 34, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+    .section_title h3 br {
+      display: none;
+    }
+  }
+  
+  /* line 40, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+  .section_title p {
+    font-size: 16px;
+    color: #6b6a6a;
+    line-height: 30px;
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 45, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+    .section_title p br {
+      display: none;
+    }
+  }
+
+  .contact-map {
+    width: 100%; /* Full width of the container */
+    height: 600px; /* Set a reasonable height */
+    border: 0; /* Remove iframe border */
+}
+
+/* Adjust height for smaller screens */
+@media (max-width: 768px) {
+    .contact-map {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-map {
+        height: 250px;
+    }
+}
+
+.event-container{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.event-temple{
+    border-color: #651D20 !important;
+    box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, .5);
+}
+
+.event-name{
+    text-decoration: none;
+}
+.evt-img{
+    height: auto;
+    max-height: 400px;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.service-card{
+    min-height: 150px;
+  }
+
+  .service-footer {
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  .valunteer-img{
+    background-color: #FFFFFF;
+    background-image: url(/images/Mandapapidi\ Amman.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+ /* donate page css */
+ .section_padding {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.section_title h3 {
+    font-size: 40px;
+    font-weight: 400;
+    color: #191d34;
+    z-index: 1;
+    font-family: "Yeseva One", cursive;
+    line-height: 1.3;
+  }
+  
+  /* line 9, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+  .section_title h3 span {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+  }
+  
+  /* line 13, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+  .section_title h3 span::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #651d20;
+    height: 10px;
+    width: 100%;
+    content: '';
+    opacity: .7;
+    bottom: 7px;
+    z-index: -1;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 2, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+    .section_title h3 {
+      font-size: 25px;
+      line-height: 36px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* line 2, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+    .section_title h3 {
+      font-size: 36px;
+      line-height: 42px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    /* line 34, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+    .section_title h3 br {
+      display: none;
+    }
+  }
+  
+  /* line 40, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+  .section_title p {
+    font-size: 16px;
+    color: #6b6a6a;
+    line-height: 30px;
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 45, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_section_title.scss */
+    .section_title p br {
+      display: none;
+    }
+  }
+
+  .reson_area .single_reson {
+    position: relative;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 2, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+    .reson_area .single_reson {
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* line 2, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+    .reson_area .single_reson {
+      margin-bottom: 40px;
+    }
+  }
+  
+  /* line 10, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .thum {
+    margin-right: 84px;
+    padding-bottom: 84px;
+  }
+  
+  /* line 13, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .thum .thum_1 {
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    overflow: hidden;
+    border: 0.5px solid #651d20;
+    box-shadow: 2px 4px 10px #651d20;
+  }
+  
+  /* line 16, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .thum .thum_1 img {
+    width: 100%;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  /* line 25, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content {
+    background: #fff;
+    color: #651D20;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    padding: 47px 40px 33px 40px;
+    left: 46px;
+  }
+  
+  /* line 34, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content h4 {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  /* line 38, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content p {
+    margin-top: 21px;
+    margin-bottom: 30px;
+  }
+  
+  /* line 42, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content .read_more {
+    font-size: 16px;
+    color: #BCBDBF;
+    text-transform: capitalize;
+    position: relative;
+    display: inline-block;
+    padding-left: 68px;
+  }
+  
+  /* line 49, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content .read_more::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 36px;
+    height: 2px;
+    background: #707070;
+    content: '';
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  /* line 60, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content .read_more:hover {
+    color: #651d20;
+  }
+  
+  /* line 62, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson .help_content .read_more:hover::before {
+    background: #651d20;
+  }
+  
+  /* line 70, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_reason.scss */
+  .reson_area .single_reson:hover .thum img {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 1200px) {
+    .thum{
+      display: none;
+    }
+    .help_content{
+      position: relative !important;
+      left: 0 !important;
+    }
+  }
+
+  .latest_activites_area {
+    background: #651d200f;
+    position: relative;
+    border-radius: 15px;
+  }
+  
+  /* line 10, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+  .latest_activites_area .video_activite {
+    position: absolute;
+    top: 0;
+    left: 0;    
+    max-height: 700px;
+    width: 50%;
+    bottom: 0;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 10, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+    .latest_activites_area .video_activite {
+      display: none !important;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* line 10, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+    .latest_activites_area .video_activite {
+      display: none !important;
+    }
+  }
+ 
+  /* line 34, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+  .latest_activites_area .video_activite::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .3;
+    content: '';
+  }
+  
+  /* line 45, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+  .latest_activites_area .activites_info {
+    padding-bottom: 20px;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 45, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+    .latest_activites_area .activites_info {
+      padding: 50px 15px;
+    }
+  }
+  
+  /* line 58, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+  .latest_activites_area .activites_info p.para_1 {
+    margin-bottom: 22px;
+    margin-top: 20px;
+  }
+  
+  /* line 62, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_latest_activites.scss */
+  .latest_activites_area .activites_info p.para_2 {
+    margin-bottom: 30px;
+  }
+
+  .boxed-btn4 {
+    color: #fff;
+    display: inline-block;
+    padding: 13px 44px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    background: #651d20;
+    font-family: "Open Sans", sans-serif;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+  
+  /* line 67, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_btn.scss */
+  .boxed-btn4:hover {
+    background: #fff;
+    color: #651d20;
+    border: 1px solid #651d20;
+  }
+  
+  /* line 72, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_btn.scss */
+  .boxed-btn4:focus {
+    outline: none;
+  }
+  
+  /* line 75, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_btn.scss */
+  .boxed-btn4.large-width {
+    width: 220px;
+  }
+  .video_bg_1 {
+    background-image: url(../images/logo1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 15px 0 0 15px;
+  }
+  
+  .make_donation_area .donation_form .input_field .input-group {
+    width: 100%;
+    border: 1px solid #651d20;
+    border-radius: 7px;
+    padding: 5px 10px;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  }
+  
+  /* line 64, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .input_field .input-group .input-group-text {
+    font-size: 16px;
+    background: transparent;
+    border: 0;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+  }
+  
+  /* line 71, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .input_field .input-group .form-control {
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    border-bottom: 0;
+    border-top: 0;
+    border-radius: 0;
+    border-right: 0;
+    padding: 0 0 0 25px;
+    height: 50px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color: #000;
+  }
+  
+  /* line 82, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .input_field .input-group .form-control::placeholder {
+    font-size: 16px;
+    color: #7A7B7C;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+  }
+  
+  /* line 88, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .input_field .input-group .form-control:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /* line 96, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .single_amount .fixed_donat {
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    padding: 18px 27px;
+    border-radius: 7px;
+    border: 1px solid #651d20;
+    display: block;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 96, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+    .make_donation_area .donation_form .single_amount .fixed_donat {
+      display: block !important;
+      margin-top: 15px;
+    }
+  }
+  
+  /* line 108, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .single_amount .fixed_donat .select_prise h4 {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    color: #7A7B7C;
+    margin-bottom: 0;
+  }
+  
+  /* line 116, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donation_form .single_amount .fixed_donat .single_doonate label {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #7A7B7C;
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 115, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+    .make_donation_area .donation_form .single_amount .fixed_donat .single_doonate {
+      width: 33.33%;
+      float: left;
+      margin-top: 15px;
+    }
+  }
+  
+  /* line 133, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_donation.scss */
+  .make_donation_area .donate_now_btn {
+    margin-top: 50px;
+  }
