@@ -42,8 +42,8 @@
                     <div class="custom-column custom-logo">
                         <div class="custom-widget">
                             <a href="index.html" class="custom-logo-link">
-                                <img class="custom-logo-image" src="images/siva-logo.png" alt="Uvari_Sri_Suyambulingaswami"
-                                    width="500" height="500">
+                                <img class="custom-logo-image" src="images/siva-logo.png"
+                                    alt="Uvari_Sri_Suyambulingaswami" width="500" height="500">
                             </a>
                         </div>
                         <section class="custom-sub-section p-0">
@@ -54,7 +54,7 @@
 
                                 <div class="ps-2 custom-column custom-audio">
                                     <audio id="audioPlayer" src="media/SivanSong.mp3"></audio>
-                                
+
                                     <div id="floatingPlayer">
                                         <div class="player-controls">
                                             <button id="closeButton"><i class="fas fa-times"></i></button>
@@ -66,7 +66,8 @@
                                                 </div>
                                             </div>
                                             <button id="playButton"><i class="fas fa-play"></i></button>
-                                            <button id="pauseButton" style="display: none;"><i class="fas fa-pause"></i></button>
+                                            <button id="pauseButton" style="display: none;"><i
+                                                    class="fas fa-pause"></i></button>
                                         </div>
                                     </div>
                                     <script>
@@ -75,15 +76,26 @@
                                         var pauseButton = document.getElementById('pauseButton');
                                         var progressBar = document.getElementById('progressBar');
                                         var albumArt = document.querySelector('.album-art');
+                                        var closeButton = document.getElementById('closeButton');
+                                        var floatingPlayer = document.getElementById('floatingPlayer');
 
+                                        // Close Button Behavior
                                         closeButton.onclick = function () {
                                             audioPlayer.pause();
+                                            audioPlayer.currentTime = 0;
+                                            progressBar.style.width = '0%';
+                                            playButton.style.display = 'inline-block';
+                                            pauseButton.style.display = 'none';
+                                            albumArt.style.animationPlayState = 'paused';
                                             floatingPlayer.style.display = 'none';
                                         };
 
-                                        // Autoplay after user interaction
+                                        // Autoplay only if player is visible and click is not on close button
                                         window.onload = function () {
-                                            document.addEventListener('click', function handleUserInteraction() {
+                                            document.addEventListener('click', function handleUserInteraction(e) {
+                                                // Skip if click is on close button or if player is hidden
+                                                if (e.target.closest('#closeButton') || floatingPlayer.style.display === 'none') return;
+
                                                 audioPlayer.play().then(() => {
                                                     playButton.style.display = 'none';
                                                     pauseButton.style.display = 'inline-block';
@@ -91,11 +103,12 @@
                                                 }).catch(function (error) {
                                                     console.log("Autoplay was blocked:", error);
                                                 });
+
                                                 document.removeEventListener('click', handleUserInteraction);
                                             });
                                         };
 
-                                        // Play Button
+                                        // Manual Play
                                         playButton.onclick = function () {
                                             audioPlayer.play();
                                             playButton.style.display = 'none';
@@ -103,7 +116,7 @@
                                             albumArt.style.animationPlayState = 'running';
                                         };
 
-                                        // Pause Button
+                                        // Manual Pause
                                         pauseButton.onclick = function () {
                                             audioPlayer.pause();
                                             pauseButton.style.display = 'none';
@@ -111,14 +124,14 @@
                                             albumArt.style.animationPlayState = 'paused';
                                         };
 
-                                        // Handle audio end (reset buttons)
+                                        // Reset on End
                                         audioPlayer.onended = function () {
                                             pauseButton.style.display = 'none';
                                             playButton.style.display = 'inline-block';
                                             albumArt.style.animationPlayState = 'paused';
                                         };
 
-                                        // Update progress bar
+                                        // Progress Bar Update
                                         audioPlayer.ontimeupdate = function () {
                                             var progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
                                             progressBar.style.width = progress + '%';
@@ -283,21 +296,24 @@
                         <div class="">
                             <section class="temple-section text-center">
                                 <div class="container">
-                                    <h2 class="temple-heading">ॐ உலகை காத்து அருள்புரியும், பக்தர்களின் பிரார்த்தனைகளை நிறைவேற்றும், உவரி சுயம்புலிங்க சுவாமி!</h2>
+                                    <h2 class="temple-heading">ॐ உலகை காத்து அருள்புரியும், பக்தர்களின் பிரார்த்தனைகளை
+                                        நிறைவேற்றும், உவரி சுயம்புலிங்க சுவாமி!</h2>
                                     <div class="temple-subheading d-flex align-items-center">
                                         <hr class="flex-grow-1">
-                                        <span class="mx-2">|| ॐ  ஓம் ||</span>
+                                        <span class="mx-2">|| ॐ ஓம் ||</span>
                                         <hr class="flex-grow-1">
                                     </div>
                                     <p class="temple-description">
-                                        உலகிற்கு கருணை புரியும், தன்னைத் தேடும் பக்தர்களுக்கு அருள் வழங்கும், உவரி சுயம்புலிங்க சுவாமி.
+                                        உலகிற்கு கருணை புரியும், தன்னைத் தேடும் பக்தர்களுக்கு அருள் வழங்கும், உவரி
+                                        சுயம்புலிங்க சுவாமி.
                                     </p>
 
                                     <!-- Bootstrap Responsive Image Grid -->
                                     <div class="row justify-content-center">
                                         <div class="col-6 col-sm-4 col-md-3 mb-3">
-                                            <img loading="lazy" width="564" height="752" src="images/Uvari_Sri_Suyambulingaswami.jpg"
-                                                class="temple-img" alt="" sizes="auto, (max-width: 600px) 100vw, 564px">
+                                            <img loading="lazy" width="564" height="752"
+                                                src="images/Uvari_Sri_Suyambulingaswami.jpg" class="temple-img" alt=""
+                                                sizes="auto, (max-width: 600px) 100vw, 564px">
                                         </div>
                                         <div class="col-6 col-sm-4 col-md-3 mb-3">
                                             <img src="images/Uvari_temple1.jpg" width="564" height="752"
@@ -388,7 +404,8 @@
                         <p>
                             Sri Uvari Sri Suyambulingaswami Temple is a revered spiritual site located in Ilanthavilai,
                             a village in the Kanyakumari district of Tamil Nadu, India. This temple is dedicated to
-                            Goddess Uvari Sri Suyambulingaswami, who is worshipped as a powerful manifestation of Para Shakti,
+                            Goddess Uvari Sri Suyambulingaswami, who is worshipped as a powerful manifestation of Para
+                            Shakti,
                             the supreme divine mother. Known for her boundless compassion and miraculous blessings,
                             devotees believe that worshipping here brings prosperity, protection, and well-being.
                         </p>
@@ -414,9 +431,11 @@
                             <h1 class="visit-hdr">State of the Temple - Sri Uvari Sri Suyambulingaswami Thirukovil</h1>
 
                             <p>
-                                Uvari Sri Suyambulingaswami Thirukovil, situated in Ilanthavilai, Kanyakumari district, Tamil
+                                Uvari Sri Suyambulingaswami Thirukovil, situated in Ilanthavilai, Kanyakumari district,
+                                Tamil
                                 Nadu, is a revered temple
-                                dedicated to Goddess Uvari Sri Suyambulingaswami, who is worshipped as a powerful manifestation of
+                                dedicated to Goddess Uvari Sri Suyambulingaswami, who is worshipped as a powerful
+                                manifestation of
                                 divine energy.
                                 The temple has been a center of devotion for centuries, attracting pilgrims who seek the
                                 Goddess’s blessings
@@ -445,7 +464,8 @@
                                 individuals actively contribute to the temple’s maintenance and future developments.
                             </p>
                             <p>
-                                Sri Uvari Sri Suyambulingaswami Thirukovil remains a significant spiritual destination, continuing
+                                Sri Uvari Sri Suyambulingaswami Thirukovil remains a significant spiritual destination,
+                                continuing
                                 to uphold its traditions and serve as a
                                 beacon of hope, faith, and divine blessings. Devotees believe that surrendering to the
                                 Goddess with sincere devotion leads to the
@@ -471,12 +491,12 @@
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <p>Uvari Suyambulinga Swamy Thirukovil is a divine haven. Its serene ambiance and spiritual resonance provide
+                        <p>Uvari Suyambulinga Swamy Thirukovil is a divine haven. Its serene ambiance and spiritual
+                            resonance provide
                             solace. Grateful for the transformative experiences and warm community. Truly blessed.</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/testi_01-300x300-85x85-1.jpg"
-                            alt="Sunton Pu">
+                        <img src="images/testi_01-300x300-85x85-1.jpg" alt="Sunton Pu">
                         <div class="author-details">
                             <h4>Sunton Pu</h4>
                             <span>Boston</span>
@@ -488,13 +508,13 @@
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <p>Uvari Suyambulinga Swamy Thirukovil is my spiritual refuge. The peaceful surroundings and soul-nourishing
+                        <p>Uvari Suyambulinga Swamy Thirukovil is my spiritual refuge. The peaceful surroundings and
+                            soul-nourishing
                             rituals create a sacred atmosphere. Gratitude for the profound experiences and welcoming
                             community.</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/testi_03-300x300-85x85-1.jpg"
-                            alt="Somdezh To">
+                        <img src="images/testi_03-300x300-85x85-1.jpg" alt="Somdezh To">
                         <div class="author-details">
                             <h4>Somdezh To</h4>
                             <span>Houston</span>
@@ -506,13 +526,13 @@
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <p>Uvari Suyambulinga Swamy Thirukovil is my sanctuary of peace. The divine energy, beautiful rituals, and
+                        <p>Uvari Suyambulinga Swamy Thirukovil is my sanctuary of peace. The divine energy, beautiful
+                            rituals, and
                             welcoming community make every visit special. Grateful for the spiritual nourishment it
                             offers.</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/photo-1507003211169-0a1dd7228f2d-120x120.png"
-                            alt="Ashin Virathu">
+                        <img src="images/photo-1507003211169-0a1dd7228f2d-120x120.png" alt="Ashin Virathu">
                         <div class="author-details">
                             <h4>Ashin Virathu</h4>
                             <span>Ontario</span>

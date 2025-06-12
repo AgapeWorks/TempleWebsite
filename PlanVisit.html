@@ -37,8 +37,8 @@
                     <div class="custom-column custom-logo">
                         <div class="custom-widget">
                             <a href="index.html" class="custom-logo-link">
-                                <img class="custom-logo-image" src="images/siva-logo.png" alt="Uvari_Sri_Suyambulingaswami"
-                                    width="500" height="500">
+                                <img class="custom-logo-image" src="images/siva-logo.png"
+                                    alt="Uvari_Sri_Suyambulingaswami" width="500" height="500">
                             </a>
                         </div>
 
@@ -71,89 +71,73 @@
                                 <!-- <li><a href="">Members</a></li> -->
                             </ul>
                         </nav>
-                        <section class="custom-sub-section p-0">
-                            <div class="custom-container d-flex align-items-center">
-                                <div class="custom-column custom-text">
-                                    <p class="custom-heading text-dark m-0">Om Namashivaya</p>
-                                </div>
+                        <script>
+                            var audioPlayer = document.getElementById('audioPlayer');
+                            var playButton = document.getElementById('playButton');
+                            var pauseButton = document.getElementById('pauseButton');
+                            var progressBar = document.getElementById('progressBar');
+                            var albumArt = document.querySelector('.album-art');
+                            var closeButton = document.getElementById('closeButton');
+                            var floatingPlayer = document.getElementById('floatingPlayer');
 
-                                <div class="ps-2 custom-column custom-audio">
-                                    <audio id="audioPlayer" src="media/SivanSong.mp3"></audio>
-                                
-                                    <div id="floatingPlayer">
-                                        <div class="player-controls">
-                                            <button id="closeButton"><i class="fas fa-times"></i></button>
-                                            <div class="album-art"></div>
-                                            <div class="track-info">
-                                                <h4 id="trackTitle">Sivan Song</h4>
-                                                <div class="progress-container" id="progressContainer">
-                                                    <div class="progress-bar" id="progressBar"></div>
-                                                </div>
-                                            </div>
-                                            <button id="playButton"><i class="fas fa-play"></i></button>
-                                            <button id="pauseButton" style="display: none;"><i class="fas fa-pause"></i></button>
-                                        </div>
-                                    </div>
-                                    <script>
-                                        var audioPlayer = document.getElementById('audioPlayer');
-                                        var playButton = document.getElementById('playButton');
-                                        var pauseButton = document.getElementById('pauseButton');
-                                        var progressBar = document.getElementById('progressBar');
-                                        var albumArt = document.querySelector('.album-art');
+                            // Close Button Behavior
+                            closeButton.onclick = function () {
+                                audioPlayer.pause();
+                                audioPlayer.currentTime = 0;
+                                progressBar.style.width = '0%';
+                                playButton.style.display = 'inline-block';
+                                pauseButton.style.display = 'none';
+                                albumArt.style.animationPlayState = 'paused';
+                                floatingPlayer.style.display = 'none';
+                            };
 
-                                        closeButton.onclick = function () {
-                                            audioPlayer.pause();
-                                            floatingPlayer.style.display = 'none';
-                                        };
+                            // Autoplay only if player is visible and click is not on close button
+                            window.onload = function () {
+                                document.addEventListener('click', function handleUserInteraction(e) {
+                                    // Skip if click is on close button or if player is hidden
+                                    if (e.target.closest('#closeButton') || floatingPlayer.style.display === 'none') return;
 
-                                        // Autoplay after user interaction
-                                        window.onload = function () {
-                                            document.addEventListener('click', function handleUserInteraction() {
-                                                audioPlayer.play().then(() => {
-                                                    playButton.style.display = 'none';
-                                                    pauseButton.style.display = 'inline-block';
-                                                    albumArt.style.animationPlayState = 'running';
-                                                }).catch(function (error) {
-                                                    console.log("Autoplay was blocked:", error);
-                                                });
-                                                document.removeEventListener('click', handleUserInteraction);
-                                            });
-                                        };
+                                    audioPlayer.play().then(() => {
+                                        playButton.style.display = 'none';
+                                        pauseButton.style.display = 'inline-block';
+                                        albumArt.style.animationPlayState = 'running';
+                                    }).catch(function (error) {
+                                        console.log("Autoplay was blocked:", error);
+                                    });
 
-                                        // Play Button
-                                        playButton.onclick = function () {
-                                            audioPlayer.play();
-                                            playButton.style.display = 'none';
-                                            pauseButton.style.display = 'inline-block';
-                                            albumArt.style.animationPlayState = 'running';
-                                        };
+                                    document.removeEventListener('click', handleUserInteraction);
+                                });
+                            };
 
-                                        // Pause Button
-                                        pauseButton.onclick = function () {
-                                            audioPlayer.pause();
-                                            pauseButton.style.display = 'none';
-                                            playButton.style.display = 'inline-block';
-                                            albumArt.style.animationPlayState = 'paused';
-                                        };
+                            // Manual Play
+                            playButton.onclick = function () {
+                                audioPlayer.play();
+                                playButton.style.display = 'none';
+                                pauseButton.style.display = 'inline-block';
+                                albumArt.style.animationPlayState = 'running';
+                            };
 
-                                        // Handle audio end (reset buttons)
-                                        audioPlayer.onended = function () {
-                                            pauseButton.style.display = 'none';
-                                            playButton.style.display = 'inline-block';
-                                            albumArt.style.animationPlayState = 'paused';
-                                        };
+                            // Manual Pause
+                            pauseButton.onclick = function () {
+                                audioPlayer.pause();
+                                pauseButton.style.display = 'none';
+                                playButton.style.display = 'inline-block';
+                                albumArt.style.animationPlayState = 'paused';
+                            };
 
-                                        // Update progress bar
-                                        audioPlayer.ontimeupdate = function () {
-                                            var progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-                                            progressBar.style.width = progress + '%';
-                                        };
-                                    </script>
-                                </div>
+                            // Reset on End
+                            audioPlayer.onended = function () {
+                                pauseButton.style.display = 'none';
+                                playButton.style.display = 'inline-block';
+                                albumArt.style.animationPlayState = 'paused';
+                            };
 
-
-                            </div>
-                        </section>
+                            // Progress Bar Update
+                            audioPlayer.ontimeupdate = function () {
+                                var progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                                progressBar.style.width = progress + '%';
+                            };
+                        </script>
                     </div>
                     <div class="toggle-nav toogle-btn text-dark">
                         <i class="fa-solid fa-bars"></i>
@@ -213,7 +197,8 @@
                         <h1 class="visit-hdr">
                             Finding Inner Peace at the Uvari Sri Suyambulingaswami Temple.
                         </h1>
-                        <p>Embark on a spiritual journey and immerse yourself in the serenity of the Uvari Sri Suyambulingaswami
+                        <p>Embark on a spiritual journey and immerse yourself in the serenity of the Uvari Sri
+                            Suyambulingaswami
                             Temple, a place of tranquility and cultural richness.</p>
                         <div class="btn contact-btn px-4 py-3"><a class="text-white" href="Contacts.html">Contact Us</a>
                         </div>

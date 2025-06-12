@@ -36,7 +36,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"
         integrity="sha512-b6lGn9+1aD2DgwZXuSY4BhhdrDURVzu7f/PASu4H1i5+CRpEalOOz/HNhgmxZTK9lObM1Q7ZG9jONPYz8klIMg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <link rel="icon" type="image/x-icon" href="images/siva-logo.png">
+    <link rel="icon" type="image/x-icon" href="images/siva-logo.png">
 </head>
 
 <body>
@@ -86,50 +86,79 @@
                                 <div class="custom-column custom-text">
                                     <p class="custom-heading m-0">Om Nama Shivaya</p>
                                 </div>
-                            
+
                                 <div class="ps-2 custom-column custom-audio">
                                     <audio id="audioPlayer" src="media/SivanSong.mp3"></audio>
-                                
+
                                     <button id="playButton"><i class="fas fa-play"></i></button>
-                                    <button id="pauseButton" style="display: none;"><i class="fas fa-pause"></i></button>
-                                
+                                    <button id="pauseButton" style="display: none;"><i
+                                            class="fas fa-pause"></i></button>
+
                                     <script>
                                         var audioPlayer = document.getElementById('audioPlayer');
                                         var playButton = document.getElementById('playButton');
                                         var pauseButton = document.getElementById('pauseButton');
-                                
-                                        // Autoplay after user interaction
+                                        var progressBar = document.getElementById('progressBar');
+                                        var albumArt = document.querySelector('.album-art');
+                                        var closeButton = document.getElementById('closeButton');
+                                        var floatingPlayer = document.getElementById('floatingPlayer');
+
+                                        // Close Button Behavior
+                                        closeButton.onclick = function () {
+                                            audioPlayer.pause();
+                                            audioPlayer.currentTime = 0;
+                                            progressBar.style.width = '0%';
+                                            playButton.style.display = 'inline-block';
+                                            pauseButton.style.display = 'none';
+                                            albumArt.style.animationPlayState = 'paused';
+                                            floatingPlayer.style.display = 'none';
+                                        };
+
+                                        // Autoplay only if player is visible and click is not on close button
                                         window.onload = function () {
-                                            document.addEventListener('click', function handleUserInteraction() {
+                                            document.addEventListener('click', function handleUserInteraction(e) {
+                                                // Skip if click is on close button or if player is hidden
+                                                if (e.target.closest('#closeButton') || floatingPlayer.style.display === 'none') return;
+
                                                 audioPlayer.play().then(() => {
-                                                    console.log("Autoplay started after user interaction.");
                                                     playButton.style.display = 'none';
                                                     pauseButton.style.display = 'inline-block';
+                                                    albumArt.style.animationPlayState = 'running';
                                                 }).catch(function (error) {
                                                     console.log("Autoplay was blocked:", error);
                                                 });
+
                                                 document.removeEventListener('click', handleUserInteraction);
                                             });
                                         };
-                                
-                                        // Play Button
+
+                                        // Manual Play
                                         playButton.onclick = function () {
                                             audioPlayer.play();
                                             playButton.style.display = 'none';
                                             pauseButton.style.display = 'inline-block';
+                                            albumArt.style.animationPlayState = 'running';
                                         };
-                                
-                                        // Pause Button
+
+                                        // Manual Pause
                                         pauseButton.onclick = function () {
                                             audioPlayer.pause();
                                             pauseButton.style.display = 'none';
                                             playButton.style.display = 'inline-block';
+                                            albumArt.style.animationPlayState = 'paused';
                                         };
-                                
-                                        // Handle audio end (reset buttons)
+
+                                        // Reset on End
                                         audioPlayer.onended = function () {
                                             pauseButton.style.display = 'none';
                                             playButton.style.display = 'inline-block';
+                                            albumArt.style.animationPlayState = 'paused';
+                                        };
+
+                                        // Progress Bar Update
+                                        audioPlayer.ontimeupdate = function () {
+                                            var progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                                            progressBar.style.width = progress + '%';
                                         };
                                     </script>
                                 </div>
@@ -145,7 +174,7 @@
         <div class="page-header ">
             <h3 class="text-center m-0 p-3">Donate for Temple</h3>
         </div>
-          <div class="container">
+        <div class="container">
             <div class="reson_area section_padding">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -165,7 +194,8 @@
                                 </div>
                                 <div class="help_content">
                                     <h4>Preservation of Heritage</h4>
-                                    <p>Contributing financially helps in maintaining the temple's rich cultural and historical heritage, 
+                                    <p>Contributing financially helps in maintaining the temple's rich cultural and
+                                        historical heritage,
                                         ensuring its legacy continues for future generations.
                                     </p>
                                     <a href="#" class="read_more">Read More</a>
@@ -181,8 +211,9 @@
                                 </div>
                                 <div class="help_content">
                                     <h4>Maintenance & Renovation</h4>
-                                    <p>Temples often require funds for repairs, structural maintenance, 
-                                        and improving facilities for devotees, ensuring the temple remains safe and welcoming.
+                                    <p>Temples often require funds for repairs, structural maintenance,
+                                        and improving facilities for devotees, ensuring the temple remains safe and
+                                        welcoming.
                                     </p>
                                     <a href="#" class="read_more">Read More</a>
                                 </div>
@@ -197,7 +228,7 @@
                                 </div>
                                 <div class="help_content">
                                     <h4>Festivals & Religious Events</h4>
-                                    <p>Financial support helps organize rituals, pujas, and festivals, 
+                                    <p>Financial support helps organize rituals, pujas, and festivals,
                                         bringing the community together for celebration and spiritual reflection.
                                     </p>
                                     <a href="#" class="read_more">Read More</a>
@@ -208,7 +239,7 @@
                 </div>
             </div>
             <!-- reson_area_end  -->
-        
+
             <!-- latest_activites_area_start  -->
             <div class="latest_activites_area my-5">
                 <div class=" video_bg_1 video_activite  d-flex align-items-center justify-content-center">
@@ -218,16 +249,16 @@
                         <div class="col-lg-6">
                             <div class="activites_info pt-5 px-5">
                                 <div class="section_title">
-                                    <h3> <span>Watch Our Latest  </span><br>
+                                    <h3> <span>Watch Our Latest </span><br>
                                         Activities</h3>
                                 </div>
-                                <p class="para_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do 
-                                    eiusmod tempor incididunt  ut labore dolore magna aliqua. 
+                                <p class="para_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
+                                    eiusmod tempor incididunt ut labore dolore magna aliqua.
                                     enim minim veniam, quis nostrud exercitation.</p class="para_1">
-                                <p class="para_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do 
-                                    eiusmod tempor incididunt  ut labore dolore magna aliqua. 
-                                    enim minim veniam, quis nostrud exercitation. tempor 
-                                    incididunt  ut labore dolore magna aliqua. enim minim 
+                                <p class="para_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
+                                    eiusmod tempor incididunt ut labore dolore magna aliqua.
+                                    enim minim veniam, quis nostrud exercitation. tempor
+                                    incididunt ut labore dolore magna aliqua. enim minim
                                     veniam, quis nostrud exercitation.</p>
                                 <a href="#" data-scroll-nav='1' class="boxed-btn4">Donate Now</a>
                             </div>
@@ -261,8 +292,8 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                              <input type="number" class="mobile form-input" id="">
-                              <label>Mobile No:</label>
+                                <input type="number" class="mobile form-input" id="">
+                                <label>Mobile No:</label>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="mobile form-input" id="">
@@ -277,12 +308,12 @@
                                 <label>Zip Code</label>
                             </div>
                             <div class="form-group">
-                              <textarea class="form-input"></textarea>
-                              <label>Message</label>
+                                <textarea class="form-input"></textarea>
+                                <label>Message</label>
                             </div>
-                          </form>
+                            </form>
                         </div>
-                      </div>
+                    </div>
                     <div class="row justify-content-center">
                         <div class="col-lg-6">
                             <form action="#" class="donation_form">
@@ -292,32 +323,33 @@
                                             <div class="input_field">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                      <span class="input-group-text" id="basic-addon1">₹</span>
+                                                        <span class="input-group-text" id="basic-addon1">₹</span>
                                                     </div>
-                                                    <input type="number" class="form-control m-0" placeholder="40,200" aria-label="Username" aria-describedby="basic-addon1">
-                                                  </div>
+                                                    <input type="number" class="form-control m-0" placeholder="40,200"
+                                                        aria-label="Username" aria-describedby="basic-addon1">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="single_amount">
-                                           <div class="fixed_donat d-flex align-items-center justify-content-between">
-                                               <div class="select_prise">
-                                                   <h4>Select Amount:</h4>
-                                               </div>
-                                                <div class="single_doonate"> 
+                                            <div class="fixed_donat d-flex align-items-center justify-content-between">
+                                                <div class="select_prise">
+                                                    <h4>Select Amount:</h4>
+                                                </div>
+                                                <div class="single_doonate">
                                                     <input type="radio" id="blns_1" name="radio-group" checked>
                                                     <label for="blns_1">100</label>
                                                 </div>
-                                                <div class="single_doonate"> 
+                                                <div class="single_doonate">
                                                     <input type="radio" id="blns_2" name="radio-group" checked>
                                                     <label for="blns_2">500</label>
                                                 </div>
-                                                <div class="single_doonate"> 
+                                                <div class="single_doonate">
                                                     <input type="radio" id="Other" name="radio-group" checked>
                                                     <label for="Other">Other</label>
                                                 </div>
-                                           </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -330,11 +362,11 @@
                                 <a href="#" class="boxed-btn4">Donate Now</a>
                             </div>
                         </div>
-        
+
                     </div>
                 </div>
             </div>
-          </div>
+        </div>
         <div class="testimonials-container">
             <div class="head-container">
                 <h5 class="text-white">Testimonials</h5>
@@ -345,7 +377,8 @@
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <p>Uvari Suyambulinga Swamy Temple is a divine haven. Its serene ambiance and spiritual resonance provide
+                        <p>Uvari Suyambulinga Swamy Temple is a divine haven. Its serene ambiance and spiritual
+                            resonance provide
                             solace. Grateful for the transformative experiences and warm community. Truly blessed.</p>
                     </div>
                     <div class="testimonial-author">
@@ -362,7 +395,8 @@
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <p>Uvari Suyambulinga Swamy Temple is my spiritual refuge. The peaceful surroundings and soul-nourishing
+                        <p>Uvari Suyambulinga Swamy Temple is my spiritual refuge. The peaceful surroundings and
+                            soul-nourishing
                             rituals create a sacred atmosphere. Gratitude for the profound experiences and welcoming
                             community.</p>
                     </div>
@@ -380,7 +414,8 @@
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <p>Uvari Suyambulinga Swamy Temple is my sanctuary of peace. The divine energy, beautiful rituals, and
+                        <p>Uvari Suyambulinga Swamy Temple is my sanctuary of peace. The divine energy, beautiful
+                            rituals, and
                             welcoming community make every visit special. Grateful for the spiritual nourishment it
                             offers.</p>
                     </div>
@@ -412,7 +447,8 @@
                 <div class="row">
                     <!-- Logo and About -->
                     <div class="col-md-3 footer-section">
-                        <img class="custom-logo-image" src="images/siva-logo.png" alt="Uvari_Sri_Suyambulingaswami" width="500" height="500">
+                        <img class="custom-logo-image" src="images/siva-logo.png" alt="Uvari_Sri_Suyambulingaswami"
+                            width="500" height="500">
                     </div>
 
                     <!-- Quick Links -->

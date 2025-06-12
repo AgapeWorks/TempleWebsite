@@ -105,15 +105,26 @@
                                         var pauseButton = document.getElementById('pauseButton');
                                         var progressBar = document.getElementById('progressBar');
                                         var albumArt = document.querySelector('.album-art');
+                                        var closeButton = document.getElementById('closeButton');
+                                        var floatingPlayer = document.getElementById('floatingPlayer');
 
+                                        // Close Button Behavior
                                         closeButton.onclick = function () {
                                             audioPlayer.pause();
+                                            audioPlayer.currentTime = 0;
+                                            progressBar.style.width = '0%';
+                                            playButton.style.display = 'inline-block';
+                                            pauseButton.style.display = 'none';
+                                            albumArt.style.animationPlayState = 'paused';
                                             floatingPlayer.style.display = 'none';
                                         };
 
-                                        // Autoplay after user interaction
+                                        // Autoplay only if player is visible and click is not on close button
                                         window.onload = function () {
-                                            document.addEventListener('click', function handleUserInteraction() {
+                                            document.addEventListener('click', function handleUserInteraction(e) {
+                                                // Skip if click is on close button or if player is hidden
+                                                if (e.target.closest('#closeButton') || floatingPlayer.style.display === 'none') return;
+
                                                 audioPlayer.play().then(() => {
                                                     playButton.style.display = 'none';
                                                     pauseButton.style.display = 'inline-block';
@@ -121,11 +132,12 @@
                                                 }).catch(function (error) {
                                                     console.log("Autoplay was blocked:", error);
                                                 });
+
                                                 document.removeEventListener('click', handleUserInteraction);
                                             });
                                         };
 
-                                        // Play Button
+                                        // Manual Play
                                         playButton.onclick = function () {
                                             audioPlayer.play();
                                             playButton.style.display = 'none';
@@ -133,7 +145,7 @@
                                             albumArt.style.animationPlayState = 'running';
                                         };
 
-                                        // Pause Button
+                                        // Manual Pause
                                         pauseButton.onclick = function () {
                                             audioPlayer.pause();
                                             pauseButton.style.display = 'none';
@@ -141,14 +153,14 @@
                                             albumArt.style.animationPlayState = 'paused';
                                         };
 
-                                        // Handle audio end (reset buttons)
+                                        // Reset on End
                                         audioPlayer.onended = function () {
                                             pauseButton.style.display = 'none';
                                             playButton.style.display = 'inline-block';
                                             albumArt.style.animationPlayState = 'paused';
                                         };
 
-                                        // Update progress bar
+                                        // Progress Bar Update
                                         audioPlayer.ontimeupdate = function () {
                                             var progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
                                             progressBar.style.width = progress + '%';
@@ -396,12 +408,12 @@
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <p>Uvari Suyambulinga Swamy Thirukovil is a divine haven. Its serene ambiance and spiritual resonance provide
+                        <p>Uvari Suyambulinga Swamy Thirukovil is a divine haven. Its serene ambiance and spiritual
+                            resonance provide
                             solace. Grateful for the transformative experiences and warm community. Truly blessed.</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/testi_01-300x300-85x85-1.jpg"
-                            alt="Sunton Pu">
+                        <img src="images/testi_01-300x300-85x85-1.jpg" alt="Sunton Pu">
                         <div class="author-details">
                             <h4>Sunton Pu</h4>
                             <span>Boston</span>
@@ -413,13 +425,13 @@
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <p>Uvari Suyambulinga Swamy Thirukovil is my spiritual refuge. The peaceful surroundings and soul-nourishing
+                        <p>Uvari Suyambulinga Swamy Thirukovil is my spiritual refuge. The peaceful surroundings and
+                            soul-nourishing
                             rituals create a sacred atmosphere. Gratitude for the profound experiences and welcoming
                             community.</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/testi_03-300x300-85x85-1.jpg"
-                            alt="Somdezh To">
+                        <img src="images/testi_03-300x300-85x85-1.jpg" alt="Somdezh To">
                         <div class="author-details">
                             <h4>Somdezh To</h4>
                             <span>Houston</span>
@@ -431,13 +443,13 @@
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <p>Uvari Suyambulinga Swamy Thirukovil is my sanctuary of peace. The divine energy, beautiful rituals, and
+                        <p>Uvari Suyambulinga Swamy Thirukovil is my sanctuary of peace. The divine energy, beautiful
+                            rituals, and
                             welcoming community make every visit special. Grateful for the spiritual nourishment it
                             offers.</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/photo-1507003211169-0a1dd7228f2d-120x120.png"
-                            alt="Ashin Virathu">
+                        <img src="images/photo-1507003211169-0a1dd7228f2d-120x120.png" alt="Ashin Virathu">
                         <div class="author-details">
                             <h4>Ashin Virathu</h4>
                             <span>Ontario</span>

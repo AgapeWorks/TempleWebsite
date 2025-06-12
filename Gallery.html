@@ -28,7 +28,7 @@
         integrity="sha512-b6lGn9+1aD2DgwZXuSY4BhhdrDURVzu7f/PASu4H1i5+CRpEalOOz/HNhgmxZTK9lObM1Q7ZG9jONPYz8klIMg=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
         </script>
-        <link rel="icon" type="image/x-icon" href="images/siva-logo.png">
+    <link rel="icon" type="image/x-icon" href="images/siva-logo.png">
 </head>
 
 <body>
@@ -39,8 +39,8 @@
                     <div class="custom-column custom-logo">
                         <div class="custom-widget">
                             <a href="index.html" class="custom-logo-link">
-                                <img class="custom-logo-image" src="images/siva-logo.png" alt="Uvari_Sri_Suyambulingaswami"
-                                    width="500" height="500">
+                                <img class="custom-logo-image" src="images/siva-logo.png"
+                                    alt="Uvari_Sri_Suyambulingaswami" width="500" height="500">
                             </a>
                         </div>
 
@@ -81,7 +81,7 @@
 
                                 <div class="ps-2 custom-column custom-audio">
                                     <audio id="audioPlayer" src="media/SivanSong.mp3"></audio>
-                                
+
                                     <div id="floatingPlayer">
                                         <div class="player-controls">
                                             <button id="closeButton"><i class="fas fa-times"></i></button>
@@ -93,7 +93,8 @@
                                                 </div>
                                             </div>
                                             <button id="playButton"><i class="fas fa-play"></i></button>
-                                            <button id="pauseButton" style="display: none;"><i class="fas fa-pause"></i></button>
+                                            <button id="pauseButton" style="display: none;"><i
+                                                    class="fas fa-pause"></i></button>
                                         </div>
                                     </div>
                                     <script>
@@ -102,15 +103,26 @@
                                         var pauseButton = document.getElementById('pauseButton');
                                         var progressBar = document.getElementById('progressBar');
                                         var albumArt = document.querySelector('.album-art');
+                                        var closeButton = document.getElementById('closeButton');
+                                        var floatingPlayer = document.getElementById('floatingPlayer');
 
+                                        // Close Button Behavior
                                         closeButton.onclick = function () {
                                             audioPlayer.pause();
+                                            audioPlayer.currentTime = 0;
+                                            progressBar.style.width = '0%';
+                                            playButton.style.display = 'inline-block';
+                                            pauseButton.style.display = 'none';
+                                            albumArt.style.animationPlayState = 'paused';
                                             floatingPlayer.style.display = 'none';
                                         };
 
-                                        // Autoplay after user interaction
+                                        // Autoplay only if player is visible and click is not on close button
                                         window.onload = function () {
-                                            document.addEventListener('click', function handleUserInteraction() {
+                                            document.addEventListener('click', function handleUserInteraction(e) {
+                                                // Skip if click is on close button or if player is hidden
+                                                if (e.target.closest('#closeButton') || floatingPlayer.style.display === 'none') return;
+
                                                 audioPlayer.play().then(() => {
                                                     playButton.style.display = 'none';
                                                     pauseButton.style.display = 'inline-block';
@@ -118,11 +130,12 @@
                                                 }).catch(function (error) {
                                                     console.log("Autoplay was blocked:", error);
                                                 });
+
                                                 document.removeEventListener('click', handleUserInteraction);
                                             });
                                         };
 
-                                        // Play Button
+                                        // Manual Play
                                         playButton.onclick = function () {
                                             audioPlayer.play();
                                             playButton.style.display = 'none';
@@ -130,7 +143,7 @@
                                             albumArt.style.animationPlayState = 'running';
                                         };
 
-                                        // Pause Button
+                                        // Manual Pause
                                         pauseButton.onclick = function () {
                                             audioPlayer.pause();
                                             pauseButton.style.display = 'none';
@@ -138,14 +151,14 @@
                                             albumArt.style.animationPlayState = 'paused';
                                         };
 
-                                        // Handle audio end (reset buttons)
+                                        // Reset on End
                                         audioPlayer.onended = function () {
                                             pauseButton.style.display = 'none';
                                             playButton.style.display = 'inline-block';
                                             albumArt.style.animationPlayState = 'paused';
                                         };
 
-                                        // Update progress bar
+                                        // Progress Bar Update
                                         audioPlayer.ontimeupdate = function () {
                                             var progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
                                             progressBar.style.width = progress + '%';
@@ -262,7 +275,8 @@
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <p>Uvari Suyambulinga Swamy Temple is a divine haven. Its serene ambiance and spiritual resonance provide
+                        <p>Uvari Suyambulinga Swamy Temple is a divine haven. Its serene ambiance and spiritual
+                            resonance provide
                             solace. Grateful for the transformative experiences and warm community. Truly blessed.</p>
                     </div>
                     <div class="testimonial-author">
@@ -279,7 +293,8 @@
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <p>Uvari Suyambulinga Swamy Temple is my spiritual refuge. The peaceful surroundings and soul-nourishing
+                        <p>Uvari Suyambulinga Swamy Temple is my spiritual refuge. The peaceful surroundings and
+                            soul-nourishing
                             rituals create a sacred atmosphere. Gratitude for the profound experiences and welcoming
                             community.</p>
                     </div>
@@ -297,7 +312,8 @@
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <p>Uvari Suyambulinga Swamy Temple is my sanctuary of peace. The divine energy, beautiful rituals, and
+                        <p>Uvari Suyambulinga Swamy Temple is my sanctuary of peace. The divine energy, beautiful
+                            rituals, and
                             welcoming community make every visit special. Grateful for the spiritual nourishment it
                             offers.</p>
                     </div>
@@ -382,14 +398,14 @@
     <script src="js/Custom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script>
-       $(document).ready(function () {
+        $(document).ready(function () {
             $('.popup-gallery').magnificPopup({
                 delegate: 'a',
                 type: 'image',
                 gallery: {
                     enabled: true,
                     navigateByImgClick: true,
-                    preload: [0, 1] 
+                    preload: [0, 1]
                 },
                 image: {
                     titleSrc: function (item) {
