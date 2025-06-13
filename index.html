@@ -338,53 +338,58 @@
             <div class="container event-container">
                 <div class="row justify-content-center">
                     <div class="col-6 col-sm-4 col-md-3 mb-3">
-                        <div class="card event-card text-center p-3">
+                        <div class="card event-card text-center p-3" style="height: 450px;">
                             <div class="card-img">
-                                <img class="event-img" src="images/temple-timing-1.png" alt="timing">
+                                <img class="event-img" src="images/clock.png" alt="timing" style="height: 100px;width: 100px;">
                             </div>
-                            <h4 class="card-txt">Temple Timing</h4>
+                            <h4 class="card-txt py-3" style="font-size: 30px;">Temple Timing</h4>
                             <p class="text-center">
-                                <span style="color:black;"><b>Monday-
+                                <span style="font-size: 20px;color: #fff;"><b>Monday-
                                         Friday</b></span><br>
-                                <span class="card-txt" style="font-size:19px; font-weight:400;">9:00AM-12:30PM
-                                    <br> 5:00PM-8:00PM</span><br>
+                                <span class="card-txt" style="font-size:15px; font-weight:400;color: #c7c7c7;">9:00AM -
+                                    12:30PM
+                                    <br> 5:00PM - 8:00PM</span><br>
 
-                                <span style="color:black;"><b>Saturday -
+                                <span style="color: #fff;"><b>Saturday -
                                         Sunday</b></span><br>
-                                <span class="card-txt" style="font-size:19px; font-weight:400;">9:00AM-8:00PM</span>
+                                <span class="card-txt" style="font-size:15px; font-weight:400;color: #c7c7c7;">9:00AM -
+                                    8:00PM</span>
                             </p>
+                             <span class="card-txt" style="font-size:19px; font-weight:400;">6.00 a.m. to 11.00 a.m
+                                    <br> 4.00 p.m. to 8.00 p.m</span><br>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-3 mb-3">
-                        <div class="card event-card text-center p-3">
+                        <div class="card event-card text-center p-3" style="height: 450px;">
                             <div class="card-img">
-                                <img class="event-img" src="images/donation-1.png" alt="timing">
+                                <img class="event-img" src="images/kalasha.png" alt="timing" style="height: 100px;width: 100px;">
                             </div>
-                            <h4 class="card-txt">Online Donation</h4>
-                            <p class="text-center text-white card-txt pt-3">
-                                Please donate generously to the Uvari Sri Suyambulingaswami Temple.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 mb-3">
-                        <div class="card event-card text-center p-3">
-                            <div class="card-img">
-                                <img class="event-img" src="images/member-1.png" alt="timing">
-                            </div>
-                            <h4 class="card-txt">Members</h4>
-                            <p class="text-center pt-3">
+                            <h4 class="card-txt py-3" style="font-size: 30px;">Pooja Timing</h4>
+                            <p class="text-center">
+                                <span style="font-size: 20px;color: #fff;"><b>Monday-
+                                        Friday</b></span><br>
+                                <span class="card-txt" style="font-size:15px; font-weight:400;color: #c7c7c7;">9:00AM -
+                                    12:30PM
+                                    <br> 5:00PM - 8:00PM</span><br>
 
+                                <span style="color: #fff;"><b>Saturday -
+                                        Sunday</b></span><br>
+                                <span class="card-txt" style="font-size:15px; font-weight:400;color: #c7c7c7;">9:00AM -
+                                    8:00PM</span>
                             </p>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-3 mb-3">
-                        <div class="card event-card text-center p-3">
+                        <div class="card event-card text-center p-3" style="height: 450px;">
                             <div class="card-img">
-                                <img class="event-img" src="images/unnamed-7.png" alt="timing">
+                                <img class="event-img" src="images/contact-us.png" alt="timing" style="height: 100px;width: 100px;">
                             </div>
-                            <h4 class="card-txt">Contact Us</h4>
+                            <h4 class="card-txt py-3" style="font-size: 30px;">Contact Us</h4>
                             <p class="text-center text-white card-txt pt-3">
-                                Connect with Uvari Sri Suyambulingaswami Temple for spiritual guidance.
+                                www.nadaruvari@gmail.com
+                            </p>
+                            <p class="text-center text-white card-txt pt-3">
+                                Ph No: 9874563210
                             </p>
                         </div>
                     </div>
@@ -400,23 +405,40 @@
                     </div>
                     <div class="col-lg-7 col-12 text-center text-lg-start">
                         <h1 class="visit-hdr">Introduction</h1>
+                        <div class="toggle-container">
+                            <button onclick="toggleLanguage()">Switch to Tamil</button>
+                        </div>
 
-                        <p>
-                            Sri Uvari Sri Suyambulingaswami Temple is a revered spiritual site located in Ilanthavilai,
-                            a village in the Kanyakumari district of Tamil Nadu, India. This temple is dedicated to
-                            Goddess Uvari Sri Suyambulingaswami, who is worshipped as a powerful manifestation of Para
-                            Shakti,
-                            the supreme divine mother. Known for her boundless compassion and miraculous blessings,
-                            devotees believe that worshipping here brings prosperity, protection, and well-being.
-                        </p>
-                        <p>
-                            The temple holds great religious and historical significance, attracting devotees from
-                            across the region.
-                            Annual festivals are celebrated with grandeur, and special poojas are conducted for devotees
-                            seeking health, wealth, and fertility blessings. The serene environment and spiritual aura
-                            of
-                            the temple make it a divine destination for those in search of peace and solace.
-                        </p>
+                        <div class="content">
+                            <p id="englishContent">
+                                Sri Uvari Sri Suyambulingaswami Temple is a revered spiritual site located in
+                                Ilanthavilai, a village in the Kanyakumari district of Tamil Nadu, India. This temple is
+                                dedicated to Goddess Uvari Sri Suyambulingaswami, who is worshipped as a powerful
+                                manifestation of Para Shakti, the supreme divine mother. Known for her boundless
+                                compassion and miraculous blessings, devotees believe that worshipping here brings
+                                prosperity, protection, and well-being.<br><br>
+                                The temple holds great religious and historical significance, attracting devotees from
+                                across the region. Annual festivals are celebrated with grandeur, and special poojas are
+                                conducted for devotees seeking health, wealth, and fertility blessings. The serene
+                                environment and spiritual aura of the temple make it a divine destination for those in
+                                search of peace and solace.
+                            </p>
+
+                            <p id="tamilContent" style="display: none;">
+                                இலந்தவிலை என்ற சிறிய கிராமத்தில், தமிழ்நாட்டின் கன்னியாகுமரி மாவட்டத்தில் அமைந்துள்ள
+                                ஸ்ரீ உவரி ஸ்ரீ சுயம்புலிங்கசாமி கோவில் ஒரு புனித ஆன்மிகத் தலம் ஆகும். இந்தக் கோவில்
+                                பராசக்தியின் சக்திவாய்ந்த உருவமாக வழிபடப்படும் உவரி ஸ்ரீ சுயம்புலிங்கசாமி அம்மனுக்கு
+                                அர்ப்பணிக்கப்பட்டது. எல்லையற்ற கருணை மற்றும் அதிசய ஆசீர்வாதங்களுக்காக பிரபலமான
+                                இக்கோவிலில் வழிபடுவது செழிப்பு, பாதுகாப்பு மற்றும் நலன்களை பெற்றுத்தரும் என்று பக்தர்கள்
+                                நம்புகின்றனர்.<br><br>
+                                இந்தக் கோவில் ஆன்மிக மற்றும் வரலாற்று முக்கியத்துவம் வாய்ந்தது. ஆண்டுதோறும் சிறப்பு
+                                திருவிழாக்கள் விமரிசையாக கொண்டாடப்படுகின்றன. உடல் நலம், செல்வம் மற்றும் பிள்ளைப்பேறு
+                                ஆகியவற்றிற்காக பக்தர்களுக்காக சிறப்பு பூஜைகள் நடைபெறுகின்றன. கோவிலின் அமைதியான சூழலும்
+                                ஆன்மிக அலைவுகளும் மன அமைதி மற்றும் ஆத்ம சாந்தியை நாடும் அனைவருக்கும் தெய்வீக அனுபவத்தை
+                                அளிக்கின்றன.
+                            </p>
+                        </div>
+
                         <div>
                             <div class="btn btn-lg"><a href="PlanVisit.html">Plan a Visit</a></div>
                         </div>
@@ -608,7 +630,28 @@
             </div>
         </footer>
     </div>
-    <script src="js/Custom.js"></script>
+    <script src="js/Custom.js"></script>+
+    <script>
+    let isEnglish = true;
+
+    function toggleLanguage() {
+      const englishPara = document.getElementById("englishContent");
+      const tamilPara = document.getElementById("tamilContent");
+      const button = document.querySelector("button");
+
+      if (isEnglish) {
+        englishPara.style.display = "none";
+        tamilPara.style.display = "block";
+        button.textContent = "Switch to English";
+      } else {
+        englishPara.style.display = "block";
+        tamilPara.style.display = "none";
+        button.textContent = "Switch to Tamil";
+      }
+
+      isEnglish = !isEnglish;
+    }
+  </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             let toggleNav = document.querySelectorAll(".toggle-nav");
