@@ -1312,6 +1312,6 @@ button:hover {
     border-top: none;
 }
 
-.F-event-card{
+.F-event-card, .P-event-card {
   min-height: 434px;
 }
