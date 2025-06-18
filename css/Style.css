@@ -283,7 +283,6 @@
 }
 
 .event-card {
-  min-height: 375px;
   background-color: transparent;
   background-image: linear-gradient(203deg, #651D20 36%, #651D20 100%);
 }
@@ -1314,4 +1313,9 @@ button:hover {
 
 .F-event-card, .P-event-card {
   min-height: 434px;
+}
+
+.event-footer{
+  border: none !important;
+  background-color: transparent !important;
 }

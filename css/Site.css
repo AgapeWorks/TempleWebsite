@@ -1208,6 +1208,7 @@ p{
   }
   .btn a{
     text-decoration: none;
+    background-color: var(--primary-color);
     color: var(--secondary-color);
   }
   .btn a:hover{
